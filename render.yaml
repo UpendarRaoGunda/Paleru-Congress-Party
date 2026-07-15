@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: paleru-congress-party-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeployTrigger: commit
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: MONGODB_URI
+        sync: false
+      - key: PALERU_SOCIAL_MONGODB_DB
+        value: paleru_congress
