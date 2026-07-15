@@ -39,7 +39,7 @@ $env:ANDROID_SDK_ROOT=$env:ANDROID_HOME
 .\gradlew.bat --no-daemon --console=plain --max-workers=1 :app:testDebugUnitTest :app:assembleDebug :app:lintDebug
 ```
 
-Copy `app/build/outputs/apk/debug/app-debug.apk` to the repository root as `PaleruCongress.apk` before committing a new mobile release.
+Copy `app/build/outputs/apk/debug/app-debug.apk` to `backend/PaleruCongress.apk` before committing a new mobile release.
 
 ## Current access boundary
 

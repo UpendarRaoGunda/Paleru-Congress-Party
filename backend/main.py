@@ -43,7 +43,7 @@ async def health():
 
 @app.get("/downloads/PaleruCongress.apk", include_in_schema=False)
 async def download_apk():
-    apk = Path(__file__).resolve().parents[1] / "PaleruCongress.apk"
+    apk = Path(__file__).resolve().parent / "PaleruCongress.apk"
     if not apk.is_file():
         from fastapi import HTTPException
         raise HTTPException(status_code=404, detail="APK is not included in this release")
