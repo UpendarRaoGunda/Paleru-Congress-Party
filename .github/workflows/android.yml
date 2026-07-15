@@ -14,8 +14,10 @@ jobs:
         with:
           distribution: temurin
           java-version: "17"
+      - name: Make Gradle wrapper executable
+        run: chmod +x gradlew
       - name: Build debug app
-        run: ./gradlew :app:assembleDebug
+        run: ./gradlew --no-daemon :app:testDebugUnitTest :app:assembleDebug
       - uses: actions/upload-artifact@v4
         with:
           name: paleru-congress-telugu-debug
