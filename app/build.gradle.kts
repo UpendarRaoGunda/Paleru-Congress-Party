@@ -12,12 +12,12 @@ android {
         applicationId = "com.paleru.congress"
         minSdk = 24
         targetSdk = 35
-        versionCode = 5
-        versionName = "1.4.0"
+        versionCode = 6
+        versionName = "1.4.1"
         buildConfigField(
             "String",
             "PALERU_SOCIAL_API_BASE",
-            "\"https://paleru-congress-party-api.onrender.com\""
+            "\"https://paleru-congress-party.onrender.com\""
         )
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

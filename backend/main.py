@@ -38,7 +38,7 @@ async def root():
 async def health():
     store = await get_social_store()
     database = await store.health()
-    return {"ok": True, "service": "paleru-congress-party-api", "database": database}
+    return {"ok": True, "service": "paleru-congress-party", "database": database}
 
 
 @app.get("/downloads/PaleruCongress.apk", include_in_schema=False)

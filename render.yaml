@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: paleru-congress-party-api
+    name: paleru-congress-party
     runtime: python
     rootDir: backend
     buildCommand: pip install -r requirements.txt
