@@ -2,7 +2,8 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import FastAPI
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, RedirectResponse
+from fastapi.staticfiles import StaticFiles
 
 from paleru_social import get_social_store, router
 
@@ -31,6 +32,7 @@ async def root():
         "status": "online",
         "health": "/paleru-social/health",
         "android_apk": "/downloads/PaleruCongress.apk",
+        "web_app": "/app/",
     }
 
 
@@ -53,3 +55,14 @@ async def download_apk():
         filename="PaleruCongress.apk",
         headers={"Cache-Control": "public, max-age=3600"},
     )
+
+
+PWA_DIR = Path(__file__).resolve().parent / "pwa"
+
+
+@app.get("/app", include_in_schema=False)
+async def web_app_redirect():
+    return RedirectResponse(url="/app/", status_code=307)
+
+
+app.mount("/app", StaticFiles(directory=PWA_DIR, html=True), name="pwa")

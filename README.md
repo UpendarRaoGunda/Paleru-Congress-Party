@@ -9,6 +9,7 @@ Private, bilingual Telugu/English Android coordination app for Congress members 
 - Persistent data: MongoDB Atlas database `paleru_congress`
 - API URL compiled into version 1.4.1: `https://paleru-congress-party.onrender.com`
 - APK after deployment: `https://paleru-congress-party.onrender.com/downloads/PaleruCongress.apk`
+- Installable iPhone/Android web app: `https://paleru-congress-party.onrender.com/app/`
 
 Posts, comments, reactions, edits, and deletions use the shared API and are visible across installed devices after refresh. Local PINs, bookmarks, unsynced drafts, field notes, and profile-correction suggestions remain on each device.
 
@@ -22,8 +23,18 @@ Posts, comments, reactions, edits, and deletions use the shared API and are visi
    - `https://paleru-congress-party.onrender.com/health`
    - `https://paleru-congress-party.onrender.com/paleru-social/health`
    - `https://paleru-congress-party.onrender.com/downloads/PaleruCongress.apk`
+   - `https://paleru-congress-party.onrender.com/app/`
 
 If Render changes the service name, update `PALERU_SOCIAL_API_BASE` in `app/build.gradle.kts`, rebuild the APK, commit it, and redeploy.
+
+## Install on iPhone or Android as a web app
+
+Open `https://paleru-congress-party.onrender.com/app/` on the phone.
+
+- iPhone/iPad: use Safari, tap **Share**, then **Add to Home Screen**.
+- Android: open the browser menu and tap **Install app** or **Add to Home screen**.
+
+The PWA uses the same shared posts, photos, comments, reactions, and MongoDB database as the Android APK. Its application shell remains available offline, while live feed actions require an internet connection. Updates arrive automatically after a new Render deployment.
 
 ## MongoDB safety
 
